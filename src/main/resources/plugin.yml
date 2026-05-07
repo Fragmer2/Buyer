@@ -1,6 +1,6 @@
 name: BurzhuyPlugin
 main: me.yourname.burzhuy.BurzhuyPlugin
-version: 2.0.2
+version: 2.0.4
 api-version: '1.21'
 author: BohdanStepantsov
 depend: [Vault]

@@ -81,7 +81,7 @@ public class BuyerMenu implements Listener, CommandExecutor {
     public void open(Player player) {
         BuyerData data = dataManager.get(player);
 
-        String title = config.getString("menu.buyer.title", "&6&l☀ Buyer ☀");
+        String title = config.getString("menu.buyer.title", "&6&l☀ Buyer ☀").replace("&", "§");
         int size = config.getInt("menu.buyer.size", 54);
         Inventory inv = Bukkit.createInventory(null, size, title);
 
@@ -291,7 +291,7 @@ public class BuyerMenu implements Listener, CommandExecutor {
         Player player = (Player) event.getWhoClicked();
         String title = event.getView().getTitle();
         
-        if (!title.equals(config.getString("menu.buyer.title", "&6&l☀ Buyer ☀"))) return;
+        if (!title.equals(config.getString("menu.buyer.title", "&6&l☀ Buyer ☀").replace("&", "§"))) return;
         
         event.setCancelled(true);
 

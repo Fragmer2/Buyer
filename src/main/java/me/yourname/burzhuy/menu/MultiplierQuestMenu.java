@@ -70,7 +70,7 @@ public class MultiplierQuestMenu implements Listener, CommandExecutor {
         List<Integer> indices = data.getActiveQuestIndices();
         List<Integer> progress = data.getQuestProgress();
 
-        String title = config.getString("menu.multiplier_quest.title", "&6&l☀ Multiplier Quests ☀");
+        String title = config.getString("menu.multiplier_quest.title", "&6&l☀ Multiplier Quests ☀").replace("&", "§");
         int size = config.getInt("menu.multiplier_quest.size", 27);
         Inventory inv = Bukkit.createInventory(null, size, title);
 
@@ -138,7 +138,7 @@ public class MultiplierQuestMenu implements Listener, CommandExecutor {
         Player player = (Player) event.getWhoClicked();
         String title = event.getView().getTitle();
         
-        if (!title.equals(config.getString("menu.multiplier_quest.title", "&6&l☀ Multiplier Quests ☀"))) return;
+        if (!title.equals(config.getString("menu.multiplier_quest.title", "&6&l☀ Multiplier Quests ☀").replace("&", "§"))) return;
         
         event.setCancelled(true);
 

@@ -78,7 +78,7 @@ public class SlotUpgradeMenu implements Listener, CommandExecutor {
                 return;
             }
 
-            String title = config.getString("menu.slot_upgrade.title", "&6&l☀ Upgrades ☀");
+            String title = config.getString("menu.slot_upgrade.title", "&6&l☀ Upgrades ☀").replace("&", "§");
             int size = config.getInt("menu.slot_upgrade.size", 27);
 
             if (size % 9 != 0 || size < 9 || size > 54) {
@@ -196,7 +196,7 @@ public class SlotUpgradeMenu implements Listener, CommandExecutor {
     public void onInventoryClick(InventoryClickEvent event) {
         if (!(event.getWhoClicked() instanceof Player)) return;
         
-        String expectedTitle = config.getString("menu.slot_upgrade.title", "&6&l☀ Upgrades ☀");
+        String expectedTitle = config.getString("menu.slot_upgrade.title", "&6&l☀ Upgrades ☀").replace("&", "§");
         if (!event.getView().getTitle().equals(expectedTitle)) return;
         
         if (event.getClickedInventory() != event.getView().getTopInventory()) return;
